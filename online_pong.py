@@ -63,6 +63,24 @@ def draw_text(
     draw_image(screen, text_obj, x, y, angle)
 # end draw_text
 
+def draw_button(screen, x, y, w, h, text, size=50, **kwargs):
+    pygame.draw.rect(
+        screen, BUTTON,
+        (
+            SCREEN_WIDTH*x, SCREEN_HEIGHT*y,
+            SCREEN_WIDTH*w, SCREEN_HEIGHT*h
+        )
+    )
+    draw_text(
+        screen,
+        SCREEN_WIDTH*(x + w/2),
+        SCREEN_HEIGHT*(y + h/2 + 0.005),
+        text,
+        size=50,
+        **kwargs
+    )
+# end draw_button
+
 # colours
 SCREEN_WIDTH = 800 # width of window
 SCREEN_HEIGHT = 600 # height of window
@@ -93,27 +111,10 @@ def main():
         screen.fill(BACKGROUND)
 
         # make buttons
-        def draw_button(x, y, w, h, text, size=50, **kwargs):
-            pygame.draw.rect(
-                screen, BUTTON,
-                (
-                    SCREEN_WIDTH*x, SCREEN_HEIGHT*y,
-                    SCREEN_WIDTH*w, SCREEN_HEIGHT*h
-                )
-            )
-            draw_text(
-                screen,
-                SCREEN_WIDTH*(x + w/2),
-                SCREEN_HEIGHT*(y + h/2 + 0.005),
-                text,
-                size=50,
-                **kwargs
-            )
-        # end draw_button
-        draw_button(0.3, 0.4, 0.4, 0.1, 'SINGLE')
-        draw_button(0.3, 0.55, 0.4, 0.1, 'LOCAL')
-        draw_button(0.3, 0.7, 0.4, 0.1, 'ONLINE')
-        draw_button(0.3, 0.85, 0.4, 0.1, 'QUIT')
+        draw_button(screen, 0.3, 0.4, 0.4, 0.1, 'SINGLE')
+        draw_button(screen, 0.3, 0.55, 0.4, 0.1, 'LOCAL')
+        draw_button(screen, 0.3, 0.7, 0.4, 0.1, 'ONLINE')
+        draw_button(screen, 0.3, 0.85, 0.4, 0.1, 'QUIT')
         draw_text(
             screen,
             SCREEN_WIDTH*0.5,
@@ -756,27 +757,10 @@ format for receive
         screen.fill(BACKGROUND)
 
         # make buttons
-        def draw_button(x, y, w, h, text, size=50, **kwargs):
-            pygame.draw.rect(
-                screen, BUTTON,
-                (
-                    SCREEN_WIDTH*x, SCREEN_HEIGHT*y,
-                    SCREEN_WIDTH*w, SCREEN_HEIGHT*h
-                )
-            )
-            draw_text(
-                screen,
-                SCREEN_WIDTH*(x + w/2),
-                SCREEN_HEIGHT*(y + h/2 + 0.005),
-                text,
-                size=50,
-                **kwargs
-            )
-        # end draw_button
-        draw_button(0.3, 0.4, 0.4, 0.1, other)
-        draw_button(0.3, 0.55, 0.4, 0.1, 'JOIN')
-        draw_button(0.3, 0.7, 0.4, 0.1, 'CREATE')
-        draw_button(0.3, 0.85, 0.4, 0.1, 'MENU')
+        draw_button(screen, 0.3, 0.4, 0.4, 0.1, other)
+        draw_button(screen, 0.3, 0.55, 0.4, 0.1, 'JOIN')
+        draw_button(screen, 0.3, 0.7, 0.4, 0.1, 'CREATE')
+        draw_button(screen, 0.3, 0.85, 0.4, 0.1, 'MENU')
         draw_text(
             screen,
             SCREEN_WIDTH*0.5,
