@@ -63,19 +63,19 @@ def draw_text(
     draw_image(screen, text_obj, x, y, angle)
 # end draw_text
 
+# colours
+SCREEN_WIDTH = 800 # width of window
+SCREEN_HEIGHT = 600 # height of window
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+BLACK = (0, 0, 0)
+BUTTON = (166, 200, 100)
+BACKGROUND = (124, 124, 180)
+
 # main function that runs all code
 def main():
     # initialize all functions / modules
     pygame.init()
-
-    # colours
-    SCREEN_WIDTH = 800 # width of window
-    SCREEN_HEIGHT = 600 # height of window
-    WHITE = (255, 255, 255)
-    RED = (255, 0, 0)
-    BLACK = (0, 0, 0)
-    BUTTON = (166, 200, 100)
-    BACKGROUND = (124, 124, 180)
 
     # make window
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)) # size
@@ -197,15 +197,6 @@ def main():
 
 # local multiplayer code
 def local(screen, ai=False):
-    # colours
-    SCREEN_WIDTH = 800 # width of window
-    SCREEN_HEIGHT = 600 # height of window
-    WHITE = (255, 255, 255)
-    RED = (255, 0, 0)
-    BLACK = (0, 0, 0)
-    BUTTON = (166, 200, 100)
-    BACKGROUND = (124, 124, 180)
-
     # game variables
     clock = pygame.time.Clock() # make screen clock
     matches = 0
@@ -725,15 +716,6 @@ def local(screen, ai=False):
 
 # online multiplayer code
 def online(screen):
-    # colours
-    SCREEN_WIDTH = 800 # width of window
-    SCREEN_HEIGHT = 600 # height of window
-    WHITE = (255, 255, 255)
-    RED = (255, 0, 0)
-    BLACK = (0, 0, 0)
-    BUTTON = (166, 200, 100)
-    BACKGROUND = (124, 124, 180)
-
     # game variables
     clock = pygame.time.Clock() # make screen clock
     matches = 0
